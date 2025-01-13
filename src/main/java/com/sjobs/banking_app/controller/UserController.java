@@ -10,20 +10,20 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 //@CrossOrigin
-@RequestMapping("/")
+@RequestMapping("/bankApi")
 public class UserController {
 
     @Autowired
     UserService userService;
 
 
-    @PostMapping("addUser")
+    @PostMapping("/addUser")
     public BankResponse createAccount(@RequestBody UserInput userInput){
         System.out.println("Inside controller");
         return userService.createAccount(userInput);
     }
 
-    @GetMapping("getUser")
+    @GetMapping("/getUser")
     public String createAccount(){
         return "Get";
     }
